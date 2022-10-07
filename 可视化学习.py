@@ -26,7 +26,7 @@ st.write(1234)
 
 # Example 3
 
-df = pd.DataFrame('审核列表 (17).xlsx')
+df = pd.read_excel('审核列表 (17).xlsx')
 st.write(df)
 
 # Example 4
