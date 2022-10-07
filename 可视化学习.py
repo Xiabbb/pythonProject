@@ -127,7 +127,7 @@ if cola:
 
 st.header('`streamlit_pandas_profiling`')
 
-df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
+df = pd.read_excel('审核列表 (17).xlsx')
 
 pr = df.profile_report()
 st_profile_report(pr)
