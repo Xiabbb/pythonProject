@@ -4,7 +4,6 @@ import altair as alt
 import numpy as np
 import pandas as pd
 import streamlit as st
-from streamlit_pandas_profiling import st_profile_report
 
 st.write('Hello world!')
 
@@ -127,7 +126,4 @@ if cola:
 
 st.header('`streamlit_pandas_profiling`')
 
-df = pd.read_excel('审核列表 (17).xlsx')
 
-pr = df.profile_report()
-st_profile_report(pr)
