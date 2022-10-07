@@ -26,10 +26,7 @@ st.write(1234)
 
 # Example 3
 
-df = pd.DataFrame({
-    'first column': [1, 2, 3, 4],
-    'second column': [10, 20, 30, 40]
-})
+df = pd.DataFrame('审核列表 (17).xlsx')
 st.write(df)
 
 # Example 4
