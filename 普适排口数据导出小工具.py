@@ -1,15 +1,14 @@
+from concurrent.futures import ThreadPoolExecutor
+
 import binascii
 import codecs
 import os
-import time
-from concurrent.futures import ThreadPoolExecutor
-
 import pandas as pd
 import requests
+import time
 from Crypto.Cipher import DES
 from Crypto.Util.Padding import pad
 from gooey import Gooey, GooeyParser
-
 from 排口平台字典 import pk_dict
 
 
@@ -79,11 +78,11 @@ def suyuan_data(i, o, time_1, time_2):
     foundTime = '新增排口' if time_1 < info['foundTime'] and info['foundTime'] < time_2 else ''
 
     riverName = paicha['riverName']
-    regionName = paicha['riverName']
+    regionName = paicha['regionName']
     lon = paicha['lon']
     lat = paicha['lat']
     try:
-        outletName = suyuan['Name']
+        outletName = suyuan['name']
     except KeyError:
         outletName = ''
     countryCode = suyuan['countryCode']
