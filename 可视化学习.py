@@ -1,7 +1,7 @@
 import datetime
 import numpy as np
 import pandas as pd
-# import plotly.express as px
+import plotly.express as px
 import requests
 import streamlit as st
 import time
@@ -156,14 +156,14 @@ if __name__ == '__main__':
     if num < 1000:
         num = 1000
     # 绘制柱状图, 配置相关参数
-    # bar_chart = px.bar(table1,
-    #                    height=num,
-    #                    width=420,
-    #                    x='合计',
-    #                    y='上报人',
-    #                    text='合计',
-    #                    color_discrete_sequence=['#F63366'] * len(table),
-    #                    template='plotly_white')
+    bar_chart = px.bar(table1,
+                       height=num,
+                       width=420,
+                       x='合计',
+                       y='上报人',
+                       text='合计',
+                       color_discrete_sequence=['#F63366'] * len(table),
+                       template='plotly_white')
 
     chart_data = pd.DataFrame(table1)
     df = pd.read_excel(filename)
@@ -171,6 +171,6 @@ if __name__ == '__main__':
     df1.rename(columns={'排口经度': 'lon'}, inplace=True)
     df1.rename(columns={'排口纬度': 'lat'}, inplace=True)
     st.map(df1)
-    s1 = st.columns(1)
+    s1, s2 = st.columns(2)
     s1.dataframe(table, height=num)
-    # s2.plotly_chart(bar_chart)
+    s2.plotly_chart(bar_chart)
